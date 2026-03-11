@@ -1,50 +1,36 @@
 ---
+import newsData from '../data/news.json';
+
+const totalArticles = newsData.news.length;
+const categories = ['LLM', 'Robotics', 'AutoDrive', 'OpenClaw', 'Multimodal', 'AI Apps'];
 ---
 
-<section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+<section class="relative min-h-[70vh] flex items-center justify-center pt-16 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
   
-  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="animate-float">
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-        <span class="bg-gradient-to-r from-primary via-primary-dark to-primary bg-clip-text text-transparent">
-          AI Pulse
-        </span>
-      </h1>
-      <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-4 font-light">
-        <span data-en="AI News Aggregator Platform" data-zh="AI 资讯聚合平台">AI News Aggregator Platform</span>
-      </p>
-      <p class="text-lg text-gray-500 dark:text-gray-500 mb-12 max-w-2xl mx-auto">
-        <span data-en="Stay ahead with the latest breakthroughs in AI, robotics, and autonomous driving" 
-              data-zh="紧跟 AI、机器人、自动驾驶领域的最新突破">Stay ahead with the latest breakthroughs in AI, robotics, and autonomous driving</span>
-      </p>
-    </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-4 tracking-tight">
+      <span class="text-gray-900 dark:text-white">AI</span>
+      <span class="text-primary">Pulse</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+      AI 领域最新资讯聚合平台
+    </p>
     
     <!-- Stats -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-      <div class="p-6 rounded-2xl bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-105">
-        <div class="text-3xl font-bold text-primary">50+</div>
-        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-en="Sources" data-zh="资讯源">Sources</div>
+    <div class="flex flex-wrap justify-center gap-8 mt-12">
+      <div class="text-center">
+        <div class="text-2xl font-semibold text-primary">{totalArticles}</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">篇文章</div>
       </div>
-      <div class="p-6 rounded-2xl bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-105">
-        <div class="text-3xl font-bold text-primary">1000+</div>
-        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-en="Articles" data-zh="文章">Articles</div>
+      <div class="text-center">
+        <div class="text-2xl font-semibold text-primary">{categories.length}</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">个分类</div>
       </div>
-      <div class="p-6 rounded-2xl bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-105">
-        <div class="text-3xl font-bold text-primary">24/7</div>
-        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-en="Updates" data-zh="更新">Updates</div>
+      <div class="text-center">
+        <div class="text-2xl font-semibold text-primary">每日</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">更新</div>
       </div>
-      <div class="p-6 rounded-2xl bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-105">
-        <div class="text-3xl font-bold text-primary">6</div>
-        <div class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-en="Categories" data-zh="分类">Categories</div>
-      </div>
-    </div>
-    
-    <!-- Scroll indicator -->
-    <div class="mt-16 animate-bounce">
-      <svg class="w-6 h-6 mx-auto text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
     </div>
   </div>
 </section>

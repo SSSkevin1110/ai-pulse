@@ -1,45 +1,56 @@
 ---
+import newsData from '../data/news.json';
+
+// Calculate real counts
+const counts = newsData.news.reduce((acc, item) => {
+  acc[item.category] = (acc[item.category] || 0) + 1;
+  return acc;
+}, {} as Record<string, number>);
+
 const tags = [
-  { name: 'LLM', nameZh: '大模型', color: 'from-red-500 to-red-600', count: 156 },
-  { name: 'Robotics', nameZh: '机器人', color: 'from-orange-500 to-orange-600', count: 89 },
-  { name: 'AutoDrive', nameZh: '自动驾驶', color: 'from-blue-500 to-blue-600', count: 67 },
-  { name: 'OpenClaw', nameZh: 'OpenClaw', color: 'from-purple-500 to-purple-600', count: 45 },
-  { name: 'Multimodal', nameZh: '多模态', color: 'from-green-500 to-green-600', count: 78 },
-  { name: 'AI Apps', nameZh: 'AI应用', color: 'from-yellow-500 to-yellow-600', count: 112 },
+  { name: 'LLM', nameZh: '大模型', color: 'from-red-500 to-red-600', count: counts['LLM'] || 0 },
+  { name: 'Robotics', nameZh: '机器人', color: 'from-orange-500 to-orange-600', count: counts['Robotics'] || 0 },
+  { name: 'AutoDrive', nameZh: '自动驾驶', color: 'from-blue-500 to-blue-600', count: counts['AutoDrive'] || 0 },
+  { name: 'OpenClaw', nameZh: 'OpenClaw', color: 'from-purple-500 to-purple-600', count: counts['OpenClaw'] || 0 },
+  { name: 'Multimodal', nameZh: '多模态', color: 'from-green-500 to-green-600', count: counts['Multimodal'] || 0 },
+  { name: 'AI Apps', nameZh: 'AI应用', color: 'from-yellow-500 to-yellow-600', count: counts['AI Apps'] || 0 },
 ];
+
+const totalCount = newsData.news.length;
 ---
 
 <section class="py-20 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">
       <span class="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-        <span data-en="Explore by Topic" data-zh="按主题探索">Explore by Topic</span>
+        <span data-en="Explore by Topic" data-zh="按主题探索">按主题探索</span>
       </span>
     </h2>
     <p class="text-center text-gray-600 dark:text-gray-400 mb-12">
-      <span data-en="Click to filter news by category" data-zh="点击按分类筛选资讯">Click to filter news by category</span>
+      <span data-en="Click to filter news by category" data-zh="点击按分类筛选资讯">点击按分类筛选资讯</span>
     </p>
     
     <div class="flex flex-wrap justify-center gap-4 mb-8">
       <!-- All button -->
       <button 
-        class="group relative px-6 py-3 rounded-full bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-primary ring-2 ring-primary transition-all duration-300 hover:scale-110 hover:shadow-lg"
+        class="group relative px-6 py-3 rounded-full bg-white dark:bg-gray-800 border-2 border-primary transition-all duration-300 hover:scale-105"
         data-tag="all"
       >
         <span class="relative flex items-center space-x-2">
-          <span class="font-semibold" data-en="All" data-zh="全部">All</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400">6</span>
+          <span class="font-semibold text-primary">全部</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
+            {totalCount}
+          </span>
         </span>
       </button>
       {tags.map((tag) => (
         <button 
-          class="group relative px-6 py-3 rounded-full bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg"
+          class="group relative px-6 py-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-105"
           data-tag={tag.name}
         >
-          <div class={`absolute inset-0 rounded-full bg-gradient-to-r ${tag.color} opacity-0 group-hover:opacity-10 transition-opacity`}></div>
           <span class="relative flex items-center space-x-2">
-            <span class="font-semibold" data-en={tag.name} data-zh={tag.nameZh}>{tag.name}</span>
-            <span class="text-xs px-2 py-0.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
+            <span class="font-semibold">{tag.nameZh}</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
               {tag.count}
             </span>
           </span>

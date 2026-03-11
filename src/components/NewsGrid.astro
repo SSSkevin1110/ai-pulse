@@ -1,78 +1,8 @@
 ---
-const newsItems = [
-  {
-    id: 1,
-    title: "GPT-5 Rumors: What We Know So Far",
-    titleZh: "GPT-5 传闻：我们目前所知",
-    source: "TechCrunch",
-    date: "2026-03-11",
-    category: "LLM",
-    summary: "Latest leaks suggest GPT-5 might feature significant improvements in reasoning and multimodal capabilities.",
-    summaryZh: "最新泄露显示 GPT-5 可能在推理和多模态能力方面有显著提升。",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400",
-    url: "#"
-  },
-  {
-    id: 2,
-    title: "Boston Dynamics Unveils New Humanoid Robot",
-    titleZh: "波士顿动力发布新款人形机器人",
-    source: "量子位",
-    date: "2026-03-10",
-    category: "Robotics",
-    summary: "The latest humanoid robot demonstrates unprecedented agility and dexterity in real-world environments.",
-    summaryZh: "最新人形机器人在真实环境中展示了前所未有的敏捷性和灵活性。",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400",
-    url: "#"
-  },
-  {
-    id: 3,
-    title: "Tesla FSD V13: Major Breakthrough in Urban Driving",
-    titleZh: "特斯拉 FSD V13：城市驾驶重大突破",
-    source: "机器之心",
-    date: "2026-03-09",
-    category: "AutoDrive",
-    summary: "The new version shows dramatic improvements in handling complex urban scenarios.",
-    summaryZh: "新版本在处理复杂城市场景方面显示出显著改进。",
-    image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400",
-    url: "#"
-  },
-  {
-    id: 4,
-    title: "OpenClaw 2.0 Released with Major Features",
-    titleZh: "OpenClaw 2.0 发布，带来重大功能",
-    source: "OpenClaw",
-    date: "2026-03-11",
-    category: "OpenClaw",
-    summary: "The latest release introduces agent orchestration, enhanced memory, and new skill marketplace.",
-    summaryZh: "最新版本引入了智能体编排、增强记忆和新技能市场。",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400",
-    url: "#"
-  },
-  {
-    id: 5,
-    title: "Sora: OpenAI's Video Generation Model Explained",
-    titleZh: "Sora：OpenAI 视频生成模型解析",
-    source: "arXiv",
-    date: "2026-03-08",
-    category: "Multimodal",
-    summary: "A deep dive into the architecture and training methodology behind OpenAI's groundbreaking video model.",
-    summaryZh: "深入解析 OpenAI 突破性视频模型背后的架构和训练方法。",
-    image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=400",
-    url: "#"
-  },
-  {
-    id: 6,
-    title: "AI Coding Assistants: 2026 Comparison",
-    titleZh: "AI 编程助手：2026 年对比",
-    source: "HuggingFace",
-    date: "2026-03-07",
-    category: "AI Apps",
-    summary: "Comprehensive benchmark comparing GitHub Copilot, Cursor, and emerging alternatives.",
-    summaryZh: "全面对比 GitHub Copilot、Cursor 和新兴替代品的基准测试。",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400",
-    url: "#"
-  }
-];
+import newsData from '../data/news.json';
+
+const { news } = newsData;
+const initialNews = news.slice(0, 12);
 
 const categoryColors: Record<string, string> = {
   'LLM': 'from-red-500 to-red-600',
@@ -82,39 +12,51 @@ const categoryColors: Record<string, string> = {
   'Multimodal': 'from-green-500 to-green-600',
   'AI Apps': 'from-yellow-500 to-yellow-600',
 };
+
+const categoryNamesZh: Record<string, string> = {
+  'LLM': '大模型',
+  'Robotics': '机器人',
+  'AutoDrive': '自动驾驶',
+  'OpenClaw': 'OpenClaw',
+  'Multimodal': '多模态',
+  'AI Apps': 'AI应用',
+};
 ---
 
-<section class="py-20 px-4 sm:px-6 lg:px-8">
+<section class="py-20 px-4 sm:px-6 lg:px-8" id="news">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">
-      <span class="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-        <span data-en="Latest News" data-zh="最新资讯">Latest News</span>
+    <div class="flex items-center justify-between mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold">
+        <span class="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+          <span data-en="Latest News" data-zh="最新资讯">Latest News</span>
+        </span>
+      </h2>
+      <span class="text-sm text-gray-500 dark:text-gray-400">
+        <span data-en="Showing" data-zh="显示">Showing</span> <span id="result-count">{initialNews.length}</span> <span data-en="articles" data-zh="篇文章">articles</span>
       </span>
-    </h2>
+    </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {newsItems.map((item) => (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="news-grid">
+      {initialNews.map((item) => (
         <article 
-          class="group relative bg-glass-light dark:bg-glass-dark backdrop-blur-md rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+          class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:shadow-xl"
           data-category={item.category}
         >
-          <!-- Glow effect -->
-          <div class={`absolute inset-0 bg-gradient-to-br ${categoryColors[item.category]} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-          
           <!-- Image -->
-          <div class="relative h-48 overflow-hidden">
+          <a href={`/news/${item.id}`} class="block relative h-48 overflow-hidden">
             <img 
               src={item.image} 
               alt={item.title}
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute top-4 left-4">
               <span class={`px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${categoryColors[item.category]}`}>
-                {item.category}
+                {categoryNamesZh[item.category]}
               </span>
             </div>
-          </div>
+          </a>
           
           <!-- Content -->
           <div class="p-6">
@@ -123,19 +65,21 @@ const categoryColors: Record<string, string> = {
               <span>{item.date}</span>
             </div>
             
-            <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors" data-en={item.title} data-zh={item.titleZh}>
-              {item.title}
-            </h3>
+            <a href={`/news/${item.id}`}>
+              <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                {item.titleZh}
+              </h3>
+            </a>
             
-            <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-4" data-en={item.summary} data-zh={item.summaryZh}>
-              {item.summary}
+            <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-4">
+              {item.summaryZh}
             </p>
             
             <a 
-              href={item.url}
-              class="inline-flex items-center text-primary font-semibold hover:underline"
+              href={`/news/${item.id}`}
+              class="inline-flex items-center text-primary font-medium hover:underline"
             >
-              <span data-en="Read more" data-zh="阅读更多">Read more</span>
+              <span data-en="Read more" data-zh="阅读更多">阅读更多</span>
               <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
@@ -147,9 +91,103 @@ const categoryColors: Record<string, string> = {
     
     <!-- Load more -->
     <div class="text-center mt-12">
-      <button class="px-8 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary-dark transition-colors shadow-lg hover:shadow-primary/50">
-        <span data-en="Load More" data-zh="加载更多">Load More</span>
+      <button id="load-more" class="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-colors shadow-lg">
+        <span data-en="Load More" data-zh="加载更多">加载更多</span>
       </button>
     </div>
   </div>
 </section>
+
+<script>
+  // Load more functionality
+  const loadMoreBtn = document.getElementById('load-more');
+  let currentCount = 12;
+  const allNews = {JSON.stringify(news)};
+  
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      const newsGrid = document.getElementById('news-grid');
+      const nextBatch = allNews.slice(currentCount, currentCount + 6);
+      
+      if (nextBatch.length === 0) {
+        loadMoreBtn.style.display = 'none';
+        return;
+      }
+      
+      nextBatch.forEach(item => {
+        const article = document.createElement('article');
+        article.className = 'group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:shadow-xl';
+        article.setAttribute('data-category', item.category);
+        
+        const categoryColors = {
+          'LLM': 'from-red-500 to-red-600',
+          'Robotics': 'from-orange-500 to-orange-600',
+          'AutoDrive': 'from-blue-500 to-blue-600',
+          'OpenClaw': 'from-purple-500 to-purple-600',
+          'Multimodal': 'from-green-500 to-green-600',
+          'AI Apps': 'from-yellow-500 to-yellow-600',
+        };
+        
+        const categoryNamesZh = {
+          'LLM': '大模型',
+          'Robotics': '机器人',
+          'AutoDrive': '自动驾驶',
+          'OpenClaw': 'OpenClaw',
+          'Multimodal': '多模态',
+          'AI Apps': 'AI应用',
+        };
+        
+        article.innerHTML = `
+          <a href="/news/${item.id}" class="block relative h-48 overflow-hidden">
+            <img 
+              src="${item.image}" 
+              alt="${item.title}"
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${categoryColors[item.category]}">
+                ${categoryNamesZh[item.category]}
+              </span>
+            </div>
+          </a>
+          <div class="p-6">
+            <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-3">
+              <span>${item.source}</span>
+              <span>${item.date}</span>
+            </div>
+            <a href="/news/${item.id}">
+              <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                ${item.titleZh}
+              </h3>
+            </a>
+            <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-4">
+              ${item.summaryZh}
+            </p>
+            <a href="/news/${item.id}" class="inline-flex items-center text-primary font-medium hover:underline">
+              <span>阅读更多</span>
+              <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        `;
+        
+        newsGrid.appendChild(article);
+      });
+      
+      currentCount += 6;
+      
+      if (currentCount >= allNews.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+      
+      // Update count
+      const countElement = document.getElementById('result-count');
+      if (countElement) {
+        countElement.textContent = currentCount;
+      }
+    });
+  }
+</script>
