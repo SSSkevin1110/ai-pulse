@@ -2,35 +2,61 @@
 import newsData from '../data/news.json';
 
 const totalArticles = newsData.news.length;
-const categories = ['LLM', 'Robotics', 'AutoDrive', 'OpenClaw', 'Multimodal', 'AI Apps'];
+const today = new Date().toLocaleDateString('zh-CN', { 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric',
+  weekday: 'long'
+});
 ---
 
-<section class="relative min-h-[70vh] flex items-center justify-center pt-16 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+<section class="relative min-h-[60vh] flex items-center justify-center pt-20 pb-12 overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
+  
+  <!-- Decorative elements -->
+  <div class="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
   
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-4 tracking-tight">
+    <!-- Date badge -->
+    <div class="inline-flex items-center px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 mb-6">
+      <span class="w-2 h-2 rounded-full bg-primary animate-pulse mr-2"></span>
+      <span class="text-sm text-gray-600 dark:text-gray-400">{today}</span>
+    </div>
+    
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
       <span class="text-gray-900 dark:text-white">AI</span>
       <span class="text-primary">Pulse</span>
     </h1>
-    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-      AI 领域最新资讯聚合平台
+    <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+      追踪人工智能领域的最新突破与前沿动态
     </p>
     
     <!-- Stats -->
-    <div class="flex flex-wrap justify-center gap-8 mt-12">
+    <div class="flex flex-wrap justify-center gap-12 mt-12">
       <div class="text-center">
-        <div class="text-2xl font-semibold text-primary">{totalArticles}</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">篇文章</div>
+        <div class="text-4xl font-bold text-primary">{totalArticles}</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">篇文章</div>
       </div>
       <div class="text-center">
-        <div class="text-2xl font-semibold text-primary">{categories.length}</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">个分类</div>
+        <div class="text-4xl font-bold text-primary">6</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">个分类</div>
       </div>
       <div class="text-center">
-        <div class="text-2xl font-semibold text-primary">每日</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">更新</div>
+        <div class="text-4xl font-bold text-primary">每日</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">更新</div>
       </div>
+    </div>
+    
+    <!-- Scroll hint -->
+    <div class="mt-16">
+      <a href="#news" class="inline-flex items-center text-gray-400 hover:text-primary transition-colors">
+        <span class="text-sm mr-2">浏览最新资讯</span>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
