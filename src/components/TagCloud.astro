@@ -20,7 +20,17 @@ const tags = [
       <span data-en="Click to filter news by category" data-zh="点击按分类筛选资讯">Click to filter news by category</span>
     </p>
     
-    <div class="flex flex-wrap justify-center gap-4">
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <!-- All button -->
+      <button 
+        class="group relative px-6 py-3 rounded-full bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-primary ring-2 ring-primary transition-all duration-300 hover:scale-110 hover:shadow-lg"
+        data-tag="all"
+      >
+        <span class="relative flex items-center space-x-2">
+          <span class="font-semibold" data-en="All" data-zh="全部">All</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400">6</span>
+        </span>
+      </button>
       {tags.map((tag) => (
         <button 
           class="group relative px-6 py-3 rounded-full bg-glass-light dark:bg-glass-dark backdrop-blur-md border border-gray-200 dark:border-gray-700 hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg"

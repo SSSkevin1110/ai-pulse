@@ -14,12 +14,22 @@
         </span>
       </div>
       
-      <!-- Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">News</a>
-        <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">Papers</a>
-        <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors">About</a>
-      </nav>
+      <!-- Search -->
+      <div class="hidden md:flex flex-1 max-w-md mx-8">
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            id="search-input"
+            placeholder="Search news..."
+            class="w-full px-4 py-2 pl-10 rounded-full bg-glass-light dark:bg-glass-dark backdrop-blur-sm border border-gray-200 dark:border-gray-700 focus:border-primary focus:outline-none transition-colors"
+            data-en-placeholder="Search news..."
+            data-zh-placeholder="搜索新闻..."
+          />
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
       
       <!-- Controls -->
       <div class="flex items-center space-x-4">
