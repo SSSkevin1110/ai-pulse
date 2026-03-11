@@ -1,0 +1,84 @@
+---
+import newsData from '../data/news-data.json';
+
+const totalArticles = newsData.length;
+const categories = [...new Set(newsData.map(item => item.category))];
+const totalCategories = categories.length;
+const latestDate = newsData.sort((a, b) => new Date(b.date) - new Date(a.date))[0]?.date;
+---
+
+<section class="relative pt-32 pb-16 overflow-hidden">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <!-- Gradient orbs -->
+    <div class="absolute top-20 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute top-40 right-1/4 w-64 h-64 bg-brand/5 rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+    <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-brand/8 rounded-full blur-3xl animate-float" style="animation-delay: -4s;"></div>
+  </div>
+
+  <div class="container-custom relative z-10">
+    <div class="text-center max-w-4xl mx-auto">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8">
+        <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+        <span class="text-sm font-medium text-[var(--text-secondary)]">实时更新 AI 行业动态</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+        <span class="gradient-text">AI Pulse</span>
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-xl md:text-2xl text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto leading-relaxed">
+        探索 AI 世界的脉搏
+        <br />
+        <span class="text-base text-[var(--text-tertiary)]">追踪全球人工智能最新资讯、技术突破与产品发布</span>
+      </p>
+
+      <!-- Search Box -->
+      <div class="max-w-xl mx-auto mb-12">
+        <div class="glass-card rounded-2xl p-2 flex items-center gap-3">
+          <div class="pl-4 text-[var(--text-tertiary)]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+          </div>
+          <input 
+            type="text" 
+            placeholder="搜索 AI 资讯、技术、公司..."
+            class="flex-1 bg-transparent py-3 px-2 text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] outline-none"
+          />
+          <button class="px-6 py-3 bg-brand hover:bg-brand-dark text-white font-medium rounded-xl transition-colors duration-200">
+            搜索
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-4 md:gap-8 max-w-lg mx-auto">
+        <div class="glass-card rounded-2xl p-4 md:p-6 text-center">
+          <div class="text-2xl md:text-3xl font-bold gradient-text mb-1">{totalArticles}</div>
+          <div class="text-sm text-[var(--text-secondary)]">精选资讯</div>
+        </div>
+        <div class="glass-card rounded-2xl p-4 md:p-6 text-center">
+          <div class="text-2xl md:text-3xl font-bold gradient-text mb-1">{totalCategories}</div>
+          <div class="text-sm text-[var(--text-secondary)]">分类标签</div>
+        </div>
+        <div class="glass-card rounded-2xl p-4 md:p-6 text-center">
+          <div class="text-2xl md:text-3xl font-bold gradient-text mb-1">24/7</div>
+          <div class="text-sm text-[var(--text-secondary)]">实时追踪</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--text-tertiary)]">
+      <path d="M12 5v14"></path>
+      <path d="m19 12-7 7-7-7"></path>
+    </svg>
+  </div>
+</section>

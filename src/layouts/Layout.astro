@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'AI Pulse - 探索 AI 世界的脉搏', 
+  description = 'AI Pulse 是一个专注于 AI 领域的资讯聚合平台，为用户提供最新、最全的人工智能行业动态、技术进展和产品发布信息。'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#E53935" />
+    <link rel="icon" type="image/svg+xml" href="/ai-pulse/favicon.svg" />
+    <title>{title}</title>
+    <script is:inline>
+      // Theme initialization
+      const theme = localStorage.getItem('theme') || 'auto';
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = theme === 'dark' || (theme === 'auto' && systemDark);
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    </script>
+  </head>
+  <body class="antialiased">
+    <slot />
+  </body>
+</html>

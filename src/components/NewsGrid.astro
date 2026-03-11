@@ -1,0 +1,183 @@
+---
+import newsData from '../data/news-data.json';
+
+// Sort by date (newest first)
+const sortedNews = newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+// Get featured article (first one)
+const featuredArticle = sortedNews[0];
+
+// Get remaining articles
+const otherArticles = sortedNews.slice(1, 12);
+
+// Format date
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const diffTime = Math.abs(now - date);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 1) return '今天';
+  if (diffDays === 2) return '昨天';
+  if (diffDays <= 7) return `${diffDays}天前`;
+  return date.toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' });
+}
+
+// Get category label
+function getCategoryLabel(category) {
+  const labels = {
+    'LLM': 'LLM',
+    'Robotics': '机器人',
+    'AutoDrive': '自动驾驶',
+    'OpenClaw': 'OpenClaw',
+    'Multimodal': '多模态',
+    'AI Apps': 'AI应用'
+  };
+  return labels[category] || category;
+}
+
+// Get category color
+function getCategoryColor(category) {
+  const colors = {
+    'LLM': '#E53935',
+    'Robotics': '#FF6B6B',
+    'AutoDrive': '#4ECDC4',
+    'OpenClaw': '#E53935',
+    'Multimodal': '#9B59B6',
+    'AI Apps': '#F39C12'
+  };
+  return colors[category] || '#E53935';
+}
+---
+
+<section class="py-12">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand">
+            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+            <path d="M18 14h-8"></path>
+            <path d="M15 18h-5"></path>
+            <path d="M10 6h8v4h-8V6Z"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-[var(--text-primary)]">精选资讯</h2>
+          <p class="text-sm text-[var(--text-secondary)]">最新 AI 行业动态</p>
+        </div>
+      </div>
+      <a href="/ai-pulse/feed" class="text-sm font-medium text-brand hover:text-brand-dark transition-colors flex items-center gap-1">
+        查看更多
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Featured Article -->
+    {featuredArticle && (
+      <a href={`/ai-pulse/news/${featuredArticle.id}`} class="block mb-8 group">
+        <article class="glass-card rounded-3xl overflow-hidden">
+          <div class="grid md:grid-cols-2 gap-0">
+            <!-- Image -->
+            <div class="relative h-64 md:h-auto overflow-hidden">
+              <img 
+                src={featuredArticle.image} 
+                alt={featuredArticle.titleZh}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-4 left-4">
+                <span 
+                  class="px-3 py-1 rounded-full text-xs font-semibold text-white"
+                  style={`background-color: ${getCategoryColor(featuredArticle.category)}`}
+                >
+                  {getCategoryLabel(featuredArticle.category)}
+                </span>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="p-6 md:p-8 flex flex-col justify-center">
+              <div class="flex items-center gap-2 text-sm text-[var(--text-tertiary)] mb-3">
+                <span class="font-medium text-[var(--text-secondary)]">{featuredArticle.source}</span>
+                <span>·</span>
+                <span>{formatDate(featuredArticle.date)}</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4 line-clamp-2 group-hover:text-brand transition-colors">
+                {featuredArticle.titleZh}
+              </h3>
+              <p class="text-[var(--text-secondary)] mb-6 line-clamp-3 leading-relaxed">
+                {featuredArticle.summaryZh}
+              </p>
+              <div class="flex items-center gap-4 text-sm text-[var(--text-tertiary)]">
+                <span class="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  阅读全文
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </a>
+    )}
+
+    <!-- News Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {otherArticles.map((article) => (
+        <a href={`/ai-pulse/news/${article.id}`} class="block group">
+          <article class="glass-card rounded-2xl overflow-hidden h-full">
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden">
+              <img 
+                src={article.image} 
+                alt={article.titleZh}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-3 left-3">
+                <span 
+                  class="px-2 py-1 rounded-full text-xs font-medium text-white"
+                  style={`background-color: ${getCategoryColor(article.category)}`}
+                >
+                  {getCategoryLabel(article.category)}
+                </span>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="p-5">
+              <div class="flex items-center gap-2 text-xs text-[var(--text-tertiary)] mb-2">
+                <span class="font-medium text-[var(--text-secondary)]">{article.source}</span>
+                <span>·</span>
+                <span>{formatDate(article.date)}</span>
+              </div>
+              <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2 line-clamp-2 group-hover:text-brand transition-colors">
+                {article.titleZh}
+              </h3>
+              <p class="text-sm text-[var(--text-secondary)] line-clamp-2 leading-relaxed">
+                {article.summaryZh}
+              </p>
+            </div>
+          </article>
+        </a>
+      ))}
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-12">
+      <a 
+        href="/ai-pulse/feed" 
+        class="inline-flex items-center gap-2 px-8 py-4 bg-brand hover:bg-brand-dark text-white font-medium rounded-xl transition-colors duration-200"
+      >
+        加载更多资讯
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14"></path>
+          <path d="m19 12-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

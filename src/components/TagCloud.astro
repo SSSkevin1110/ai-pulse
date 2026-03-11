@@ -1,0 +1,98 @@
+---
+import newsData from '../data/news-data.json';
+
+// Define tag categories with icons and colors
+const tagConfig = {
+  'LLM': { icon: '🧠', color: '#E53935', label: 'LLM' },
+  'Robotics': { icon: '🤖', color: '#FF6B6B', label: '机器人' },
+  'AutoDrive': { icon: '🚗', color: '#4ECDC4', label: '自动驾驶' },
+  'OpenClaw': { icon: '🦞', color: '#E53935', label: 'OpenClaw' },
+  'Multimodal': { icon: '🎨', color: '#9B59B6', label: '多模态' },
+  'AI Apps': { icon: '💡', color: '#F39C12', label: 'AI应用' }
+};
+
+// Count articles per category
+const categoryCounts = newsData.reduce((acc, item) => {
+  acc[item.category] = (acc[item.category] || 0) + 1;
+  return acc;
+}, {});
+
+// Build tags array
+const tags = Object.entries(categoryCounts).map(([category, count]) => ({
+  id: category,
+  ...tagConfig[category],
+  count
+})).sort((a, b) => b.count - a.count);
+---
+
+<section class="py-12">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand">
+            <path d="M12 2H2v10h10V2z"></path>
+            <path d="M12 12H2v10h10V12z"></path>
+            <path d="M22 2h-10v10h10V2z"></path>
+            <path d="M22 12h-10v10h10V12z"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-[var(--text-primary)]">热门标签</h2>
+          <p class="text-sm text-[var(--text-secondary)]">探索感兴趣的 AI 领域</p>
+        </div>
+      </div>
+      <a href="/ai-pulse/tags" class="text-sm font-medium text-brand hover:text-brand-dark transition-colors flex items-center gap-1">
+        查看全部
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Tag Cloud -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {tags.map((tag) => (
+        <a 
+          href={`/ai-pulse/feed?tag=${tag.id}`}
+          class="glass-card rounded-2xl p-5 text-center group hover:scale-105 transition-all duration-300"
+        >
+          <div class="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{tag.icon}</div>
+          <div class="font-semibold text-[var(--text-primary)] mb-1">{tag.label}</div>
+          <div class="text-sm text-[var(--text-secondary)]">×{tag.count}</div>
+          <div 
+            class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+            style={`background-color: ${tag.color}`}
+          ></div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Quick Filter Bar -->
+    <div class="mt-8 glass-card rounded-2xl p-4">
+      <div class="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-hide">
+        <span class="text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">快速筛选:</span>
+        <button class="px-4 py-2 rounded-full bg-brand text-white text-sm font-medium whitespace-nowrap">
+          全部
+        </button>
+        {tags.slice(0, 5).map((tag) => (
+          <button class="px-4 py-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-secondary)] text-sm font-medium whitespace-nowrap hover:bg-[var(--accent-light)] hover:text-brand transition-colors">
+            {tag.icon} {tag.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
