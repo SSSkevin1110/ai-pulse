@@ -7,8 +7,8 @@
       "source": "OpenAI Blog",
       "date": "2026-03-10",
       "category": "LLM",
-      "summary": "OpenAI announces GPT-4.5, featuring significant improvements in mathematical reasoning and code generation. The model shows 40% better performance on complex problem-solving tasks.",
-      "summaryZh": "OpenAI 发布 GPT-4.5，在数学推理和代码生成方面有显著提升。该模型在复杂问题解决任务上表现提高了40%。",
+      "summary": "OpenAI announces GPT-4.5, featuring significant improvements in mathematical reasoning and code generation.",
+      "summaryZh": "OpenAI 发布 GPT-4.5，在数学推理和代码生成方面有显著提升。",
       "content": "OpenAI has officially released GPT-4.5, the latest iteration in their flagship language model series. This version introduces several key improvements:\n\n1. Enhanced Mathematical Reasoning: GPT-4.5 demonstrates superior performance on advanced mathematics problems, including calculus and abstract algebra.\n\n2. Code Generation: The model now generates more efficient and bug-free code, with particular strength in Python and JavaScript.\n\n3. Context Understanding: Improved ability to maintain context over longer conversations, with support for up to 128k tokens.\n\n4. Multilingual Support: Better performance across non-English languages, particularly Chinese, Japanese, and German.\n\nThe model is available through OpenAI's API and ChatGPT Plus subscription.",
       "url": "https://openai.com/blog/gpt-4-5",
       "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"
@@ -20,8 +20,8 @@
       "source": "Nature",
       "date": "2026-03-09",
       "category": "AI Apps",
-      "summary": "AlphaFold 3 expands beyond proteins to predict DNA, RNA, and small molecule structures with unprecedented accuracy, revolutionizing drug discovery.",
-      "summaryZh": "AlphaFold 3 超越蛋白质预测，可以高精度预测 DNA、RNA 和小分子结构，彻底改变药物发现领域。",
+      "summary": "AlphaFold 3 expands beyond proteins to predict DNA, RNA, and small molecule structures with unprecedented accuracy.",
+      "summaryZh": "AlphaFold 3 超越蛋白质预测，可以高精度预测 DNA、RNA 和小分子结构。",
       "content": "Google DeepMind has released AlphaFold 3, a groundbreaking expansion of their protein structure prediction system. The new version can predict the structure of virtually all biomolecules:\n\nKey Capabilities:\n- Protein-DNA interactions\n- RNA folding patterns\n- Small molecule binding sites\n- Complex molecular assemblies\n\nImpact on Drug Discovery:\nPharmaceutical companies are already using AlphaFold 3 to identify new drug targets and predict drug-protein interactions, potentially reducing drug development time by years.",
       "url": "https://www.nature.com/articles/alphafold-3",
       "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800"
@@ -33,8 +33,8 @@
       "source": "TechCrunch",
       "date": "2026-03-08",
       "category": "AutoDrive",
-      "summary": "Tesla's Full Self-Driving V13 replaces traditional computer vision with a single end-to-end neural network, reducing interventions by 60%.",
-      "summaryZh": "特斯拉 FSD V13 用单一端到端神经网络取代传统计算机视觉，干预次数减少60%。",
+      "summary": "Tesla's Full Self-Driving V13 replaces traditional computer vision with a single end-to-end neural network.",
+      "summaryZh": "特斯拉 FSD V13 用单一端到端神经网络取代传统计算机视觉。",
       "content": "Tesla has released Full Self-Driving (FSD) Version 13, marking a major architectural shift in autonomous driving technology.\n\nKey Changes:\n- Single end-to-end neural network replaces 300,000 lines of C++ code\n- Direct video input to steering output\n- 60% reduction in human interventions\n- Improved handling of complex urban scenarios\n\nThe update is rolling out to FSD Beta users in North America this week.",
       "url": "https://techcrunch.com/2026/03/08/tesla-fsd-v13",
       "image": "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800"
@@ -46,8 +46,8 @@
       "source": "IEEE Spectrum",
       "date": "2026-03-07",
       "category": "Robotics",
-      "summary": "The latest Atlas demonstration shows the humanoid robot performing construction tasks including drywall installation and tool handling.",
-      "summaryZh": "最新的 Atlas 演示显示，这款人形机器人可以执行建筑任务，包括安装干墙和操作工具。",
+      "summary": "The latest Atlas demonstration shows the humanoid robot performing construction tasks including drywall installation.",
+      "summaryZh": "最新的 Atlas 演示显示，这款人形机器人可以执行建筑任务。",
       "content": "Boston Dynamics has showcased a new version of their Atlas humanoid robot capable of performing construction tasks autonomously.\n\nDemonstrated Capabilities:\n- Drywall installation\n- Tool manipulation (drills, hammers)\n- Material transport\n- Working alongside human construction workers\n\nCommercial Deployment:\nBoston Dynamics plans to begin pilot programs with construction companies in Q3 2026.",
       "url": "https://spectrum.ieee.org/atlas-construction",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800"
@@ -59,8 +59,8 @@
       "source": "OpenClaw",
       "date": "2026-03-11",
       "category": "OpenClaw",
-      "summary": "OpenClaw 2.0 introduces agent teams, shared memory, and a skill marketplace. Users can now create workflows with multiple AI agents working together.",
-      "summaryZh": "OpenClaw 2.0 引入智能体团队、共享内存和技能市场。用户现在可以创建多个 AI 智能体协作的工作流。",
+      "summary": "OpenClaw 2.0 introduces agent teams, shared memory, and a skill marketplace.",
+      "summaryZh": "OpenClaw 2.0 引入智能体团队、共享内存和技能市场。",
       "content": "OpenClaw 2.0 is now available, bringing powerful new capabilities for building AI agent applications:\n\nNew Features:\n- Agent Teams: Coordinate multiple agents to work on complex tasks\n- Shared Memory: Agents can share context and learn from each other\n- Skill Marketplace: Discover and install pre-built agent skills\n- Enhanced Security: Enterprise-grade access controls\n\nThe update is available immediately for all users.",
       "url": "https://openclaw.ai/blog/v2-release",
       "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800"
@@ -72,7 +72,7 @@
       "source": "OpenAI",
       "date": "2026-03-06",
       "category": "Multimodal",
-      "summary": "Sora is now available to ChatGPT Plus and Pro users, capable of generating 60-second 1080p videos from text prompts.",
+      "summary": "Sora is now available to ChatGPT Plus and Pro users, capable of generating 60-second 1080p videos.",
       "summaryZh": "Sora 现已向 ChatGPT Plus 和 Pro 用户开放，可根据文本提示生成60秒1080p视频。",
       "content": "OpenAI has officially released Sora, their text-to-video generation model, to the public.\n\nCapabilities:\n- Generate 60-second 1080p videos\n- Text-to-video and image-to-video\n- Video editing and extension\n- Support for various aspect ratios\n\nAvailability:\nSora is included with ChatGPT Plus ($20/month) and Pro subscriptions. Free tier users get limited generations.",
       "url": "https://openai.com/sora",
@@ -85,8 +85,8 @@
       "source": "Mistral AI",
       "date": "2026-03-05",
       "category": "LLM",
-      "summary": "Mistral Large 2.5 offers competitive performance with GPT-4 at a fraction of the cost, featuring 128K token context window.",
-      "summaryZh": "Mistral Large 2.5 以更低成本提供与 GPT-4 相当的性能，支持 128K token 上下文窗口。",
+      "summary": "Mistral Large 2.5 offers competitive performance with GPT-4 at a fraction of the cost.",
+      "summaryZh": "Mistral Large 2.5 以更低成本提供与 GPT-4 相当的性能。",
       "content": "Mistral AI has announced Large 2.5, their most capable language model to date.\n\nKey Features:\n- 128K context window\n- Multilingual support (80+ languages)\n- Coding and reasoning capabilities\n- 50% lower cost than GPT-4 Turbo\n\nThe model is available through Mistral's API and on Azure AI Studio.",
       "url": "https://mistral.ai/news/large-2-5",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800"
@@ -98,8 +98,8 @@
       "source": "Reuters",
       "date": "2026-03-04",
       "category": "Robotics",
-      "summary": "Figure 01 humanoid robots begin trial deployment at BMW's Spartanburg plant for manufacturing assistance.",
-      "summaryZh": "Figure 01 人形机器人在宝马斯巴达堡工厂开始试部署，协助制造工作。",
+      "summary": "Figure 01 humanoid robots begin trial deployment at BMW's Spartanburg plant.",
+      "summaryZh": "Figure 01 人形机器人在宝马斯巴达堡工厂开始试部署。",
       "content": "Figure AI has begun deploying their humanoid robots at BMW's manufacturing facility in Spartanburg, South Carolina.\n\nDeployment Details:\n- Initial trial with 10 Figure 01 robots\n- Tasks include parts handling and quality inspection\n- 24/7 operation capability\n- Integration with existing factory systems\n\nIf successful, BMW plans to expand deployment to additional facilities.",
       "url": "https://www.reuters.com/technology/figure-bmw",
       "image": "https://images.unsplash.com/photo-1565514020176-db8e254a61f9?w=800"
@@ -111,8 +111,8 @@
       "source": "The Verge",
       "date": "2026-03-03",
       "category": "AutoDrive",
-      "summary": "Waymo's autonomous robotaxi service is now available to the public in Los Angeles, covering 63 square miles.",
-      "summaryZh": "Waymo 的自动驾驶机器人出租车服务现已在洛杉矶向公众开放，覆盖63平方英里。",
+      "summary": "Waymo's autonomous robotaxi service is now available to the public in Los Angeles.",
+      "summaryZh": "Waymo 的自动驾驶机器人出租车服务现已在洛杉矶向公众开放。",
       "content": "Waymo has expanded its robotaxi service to Los Angeles, making it the third city to offer public autonomous rides.\n\nService Area:\n- 63 square miles covering Santa Monica, Century City, and downtown LA\n- 24/7 availability\n- No safety driver in most conditions\n\nPricing:\nRides are priced competitively with Uber and Lyft, starting at $3.50 base fare plus $1.50 per mile.",
       "url": "https://www.theverge.com/waymo-la",
       "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800"
@@ -124,8 +124,8 @@
       "source": "Anthropic",
       "date": "2026-03-02",
       "category": "LLM",
-      "summary": "Anthropic's Claude 3.5 Sonnet sets new records on HumanEval and other coding benchmarks, outperforming GPT-4 and Gemini.",
-      "summaryZh": "Anthropic 的 Claude 3.5 Sonnet 在 HumanEval 等编程基准测试中创造新纪录，超越 GPT-4 和 Gemini。",
+      "summary": "Anthropic's Claude 3.5 Sonnet sets new records on HumanEval and other coding benchmarks.",
+      "summaryZh": "Anthropic 的 Claude 3.5 Sonnet 在 HumanEval 等编程基准测试中创造新纪录。",
       "content": "Anthropic has released Claude 3.5 Sonnet, setting new state-of-the-art results on coding evaluation benchmarks.\n\nBenchmark Results:\n- HumanEval: 92.0% (previous SOTA: 90.2%)\n- MBPP: 88.5%\n- SWE-bench: 56.7%\n\nThe model is available through Anthropic's API and Claude.ai with existing subscription plans.",
       "url": "https://www.anthropic.com/news/claude-3-5-sonnet",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
@@ -137,8 +137,8 @@
       "source": "Hugging Face",
       "date": "2026-03-01",
       "category": "AI Apps",
-      "summary": "ZeroGPU provides free GPU access for running open-source AI models, democratizing access to AI compute.",
-      "summaryZh": "ZeroGPU 提供免费 GPU 访问来运行开源 AI 模型，让 AI 计算民主化。",
+      "summary": "ZeroGPU provides free GPU access for running open-source AI models.",
+      "summaryZh": "ZeroGPU 提供免费 GPU 访问来运行开源 AI 模型。",
       "content": "Hugging Face has launched ZeroGPU, a new service providing free GPU access for AI model inference.\n\nFeatures:\n- Free access to NVIDIA A100 GPUs\n- Support for 100,000+ open-source models\n- No credit card required\n- Rate limits: 1000 requests/day for free tier\n\nThis initiative aims to make AI development accessible to researchers and developers worldwide.",
       "url": "https://huggingface.co/blog/zerogpu",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800"
@@ -150,265 +150,11 @@
       "source": "Midjourney",
       "date": "2026-02-28",
       "category": "Multimodal",
-      "summary": "Midjourney V7 adds video generation capabilities, allowing users to create 4-second clips from images in real-time.",
+      "summary": "Midjourney V7 adds video generation capabilities, allowing users to create 4-second clips.",
       "summaryZh": "Midjourney V7 增加视频生成功能，允许用户实时从图像创建4秒视频片段。",
       "content": "Midjourney has released Version 7, adding video generation to their popular AI image creation platform.\n\nVideo Features:\n- 4-second 1080p video clips\n- Image-to-video conversion\n- Motion brush for controlling movement\n- Camera control (pan, zoom, rotate)\n\nPricing:\nVideo generation is included with Pro plans ($60/month) and above. Standard plan users can purchase video credits.",
       "url": "https://www.midjourney.com/v7",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800"
-    },
-    {
-      "id": "13",
-      "title": "Meta Releases Llama 3.1 with 405B Parameters",
-      "titleZh": "Meta 发布 Llama 3.1，4050亿参数",
-      "source": "Meta AI",
-      "date": "2026-02-27",
-      "category": "LLM",
-      "summary": "Meta's largest open-source model yet features 405 billion parameters and rivals GPT-4 in performance.",
-      "summaryZh": "Meta 迄今为止最大的开源模型，拥有4050亿参数，性能媲美 GPT-4。",
-      "content": "Meta has released Llama 3.1, their most capable open-source language model to date.
-
-Key Specifications:
-- 405 billion parameters (largest open-source model)
-- 128K context window
-- Multilingual support
-- Available for commercial use
-
-Performance:
-Llama 3.1 matches or exceeds GPT-4 on many benchmarks while being freely available for research and commercial applications.",
-      "url": "https://ai.meta.com/blog/llama-3-1",
-      "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800"
-    },
-    {
-      "id": "14",
-      "title": "NVIDIA Announces Blackwell B200 GPU for AI",
-      "titleZh": "NVIDIA 发布 Blackwell B200 GPU 用于 AI",
-      "source": "NVIDIA",
-      "date": "2026-02-26",
-      "category": "AI Apps",
-      "summary": "The new Blackwell architecture delivers 4x performance of Hopper, enabling trillion-parameter models.",
-      "summaryZh": "全新 Blackwell 架构性能是 Hopper 的4倍，支持万亿参数模型。",
-      "content": "NVIDIA has unveiled the Blackwell B200 GPU, their most powerful AI accelerator yet.
-
-Key Features:
-- 208 billion transistors
-- 4x performance improvement over H100
-- Support for models with up to 10 trillion parameters
-- Second-generation transformer engine
-
-Availability:
-Blackwell GPUs will begin shipping in late 2026, with major cloud providers already placing orders.",
-      "url": "https://nvidia.com/blackwell",
-      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800"
-    },
-    {
-      "id": "15",
-      "title": "Cruise Resumes Robotaxi Operations in San Francisco",
-      "titleZh": "Cruise 在旧金山恢复机器人出租车运营",
-      "source": "TechCrunch",
-      "date": "2026-02-25",
-      "category": "AutoDrive",
-      "summary": "After safety review, Cruise's autonomous vehicles return to San Francisco streets with enhanced oversight.",
-      "summaryZh": "经过安全审查后，Cruise 的自动驾驶车辆重返旧金山街道，并加强监督。",
-      "content": "Cruise has resumed robotaxi operations in San Francisco following a comprehensive safety review.
-
-New Safety Measures:
-- Enhanced remote monitoring
-- Improved pedestrian detection
-- 24/7 safety operations center
-- Regular third-party safety audits
-
-The company aims to rebuild public trust through transparency and rigorous safety protocols.",
-      "url": "https://techcrunch.com/cruise-sf-return",
-      "image": "https://images.unsplash.com/photo-1569346656677-166113f29202?w=800"
-    },
-    {
-      "id": "16",
-      "title": "Agility Robotics' Digit Enters Warehouse Deployment",
-      "titleZh": "Agility Robotics 的 Digit 进入仓库部署",
-      "source": "Agility Robotics",
-      "date": "2026-02-24",
-      "category": "Robotics",
-      "summary": "Digit humanoid robots begin commercial deployment in Amazon warehouses for package handling.",
-      "summaryZh": "Digit 人形机器人在亚马逊仓库开始商业部署，用于包裹处理。",
-      "content": "Agility Robotics has begun deploying their Digit humanoid robots in Amazon fulfillment centers.
-
-Deployment Scope:
-- Initial rollout in 5 warehouses
-- Tasks include tote recycling and package handling
-- Working alongside human employees
-- 16-hour continuous operation capability
-
-Amazon plans to expand to 50 facilities by end of 2026 if initial deployment proves successful.",
-      "url": "https://agilityrobotics.com/digit-amazon",
-      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
-    },
-    {
-      "id": "17",
-      "title": "OpenClaw Introduces Agent Memory System",
-      "titleZh": "OpenClaw 引入智能体记忆系统",
-      "source": "OpenClaw",
-      "date": "2026-02-23",
-      "category": "OpenClaw",
-      "summary": "New persistent memory allows agents to remember conversations and learn from past interactions.",
-      "summaryZh": "新的持久记忆功能让智能体可以记住对话并从过去的交互中学习。",
-      "content": "OpenClaw has launched a new Agent Memory System, enabling AI agents to maintain persistent memory across sessions.
-
-Features:
-- Long-term memory storage
-- Context-aware responses
-- Learning from user preferences
-- Cross-session continuity
-
-This update significantly enhances agent capabilities for complex, multi-step tasks.",
-      "url": "https://openclaw.ai/blog/memory-system",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800"
-    },
-    {
-      "id": "18",
-      "title": "Runway Gen-3 Alpha: Next-Gen Video Synthesis",
-      "titleZh": "Runway Gen-3 Alpha：下一代视频合成",
-      "source": "Runway",
-      "date": "2026-02-22",
-      "category": "Multimodal",
-      "summary": "Runway's Gen-3 Alpha generates high-fidelity video with improved temporal consistency and motion.",
-      "summaryZh": "Runway 的 Gen-3 Alpha 生成高保真视频，具有改进的时间一致性和运动效果。",
-      "content": "Runway has announced Gen-3 Alpha, their most advanced video generation model.
-
-Capabilities:
-- 10-second 1080p video generation
-- Improved character consistency
-- Better motion physics
-- Text and image-to-video
-
-The model is available to Runway subscribers starting today.",
-      "url": "https://runwayml.com/gen-3",
-      "image": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800"
-    },
-    {
-      "id": "19",
-      "title": "xAI Grok-2 Beats GPT-4 on Truthfulness Benchmark",
-      "titleZh": "xAI Grok-2 在真实性基准测试中击败 GPT-4",
-      "source": "xAI",
-      "date": "2026-02-21",
-      "category": "LLM",
-      "summary": "Grok-2 achieves highest score on TruthfulQA, designed to measure model honesty and factuality.",
-      "summaryZh": "Grok-2 在 TruthfulQA 上获得最高分，该测试旨在衡量模型的诚实性和事实性。",
-      "content": "xAI's Grok-2 has achieved state-of-the-art performance on the TruthfulQA benchmark.
-
-Benchmark Results:
-- TruthfulQA: 94.2% (vs GPT-4's 89.1%)
-- Significant improvement in avoiding hallucinations
-- Better at admitting uncertainty
-- Improved fact-checking capabilities
-
-The model is available through xAI's API and X Premium subscription.",
-      "url": "https://x.ai/blog/grok-2",
-      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"
-    },
-    {
-      "id": "20",
-      "title": "Pony.ai Receives Driverless Taxi License in China",
-      "titleZh": "小马智行在中国获得无人驾驶出租车牌照",
-      "source": "Pony.ai",
-      "date": "2026-02-20",
-      "category": "AutoDrive",
-      "summary": "First Chinese company to receive permit for fully driverless robotaxi service in Guangzhou.",
-      "summaryZh": "首家获得广州完全无人驾驶机器人出租车服务许可的中国公司。",
-      "content": "Pony.ai has become the first Chinese autonomous driving company to receive a driverless taxi license.
-
-Service Details:
-- Operations in Guangzhou city center
-- No safety driver required
-- 24/7 service availability
-- Initial fleet of 100 vehicles
-
-This marks a significant milestone for autonomous driving in China.",
-      "url": "https://pony.ai/news/license",
-      "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800"
-    },
-    {
-      "id": "21",
-      "title": "DeepMind's RoboCat Learns New Tasks in Hours",
-      "titleZh": "DeepMind 的 RoboCat 在数小时内学习新任务",
-      "source": "Google DeepMind",
-      "date": "2026-02-19",
-      "category": "Robotics",
-      "summary": "RoboCat can learn new robotic manipulation tasks from as few as 100 demonstrations.",
-      "summaryZh": "RoboCat 可以从仅100次演示中学习新的机器人操作任务。",
-      "content": "Google DeepMind has unveiled RoboCat, a self-improving robotic agent that learns new tasks rapidly.
-
-Key Capabilities:
-- Learns new tasks in hours, not days
-- Self-generates additional training data
-- Adapts to different robot embodiments
-- Continuous self-improvement
-
-RoboCat represents a major step toward general-purpose robotic systems.",
-      "url": "https://deepmind.google/robocat",
-      "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800"
-    },
-    {
-      "id": "22",
-      "title": "Stability AI Releases Stable Diffusion 3.5",
-      "titleZh": "Stability AI 发布 Stable Diffusion 3.5",
-      "source": "Stability AI",
-      "date": "2026-02-18",
-      "category": "Multimodal",
-      "summary": "SD 3.5 delivers improved image quality, better typography, and more accurate anatomy.",
-      "summaryZh": "SD 3.5 提供改进的图像质量、更好的排版和更准确的人体结构。",
-      "content": "Stability AI has released Stable Diffusion 3.5, featuring significant improvements in image generation quality.
-
-Improvements:
-- Better text rendering in images
-- Improved human anatomy accuracy
-- Enhanced photorealism
-- Faster inference speed
-
-The model is available for commercial use through Stability AI's API.",
-      "url": "https://stability.ai/sd-3-5",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800"
-    },
-    {
-      "id": "23",
-      "title": "AI21 Labs' Jamba: Hybrid SSM-Transformer Architecture",
-      "titleZh": "AI21 Labs 的 Jamba：混合 SSM-Transformer 架构",
-      "source": "AI21 Labs",
-      "date": "2026-02-17",
-      "category": "LLM",
-      "summary": "Jamba combines Mamba's efficiency with Transformer power, enabling 256K context windows.",
-      "summaryZh": "Jamba 结合 Mamba 的效率和 Transformer 的能力，支持 256K 上下文窗口。",
-      "content": "AI21 Labs has introduced Jamba, the first production-grade hybrid SSM-Transformer model.
-
-Architecture:
-- Combines Mamba SSM and Transformer layers
-- 256K token context window
-- 3x faster throughput than Transformer-only models
-- Reduced memory requirements
-
-Jamba is available through AI21 Labs' API and on Hugging Face.",
-      "url": "https://ai21.com/jamba",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800"
-    },
-    {
-      "id": "24",
-      "title": "Covariant RFM-2: Universal Robot Foundation Model",
-      "titleZh": "Covariant RFM-2：通用机器人基础模型",
-      "source": "Covariant",
-      "date": "2026-02-16",
-      "category": "Robotics",
-      "summary": "RFM-2 is a universal AI model that can control any robot for any task after minimal training.",
-      "summaryZh": "RFM-2 是一个通用 AI 模型，可以在最少训练后控制任何机器人执行任何任务。",
-      "content": "Covariant has announced RFM-2, a foundation model for robotics that generalizes across different robot types and tasks.
-
-Capabilities:
-- Works with any robotic hardware
-- Learns new tasks from few examples
-- Understands natural language instructions
-- Real-time adaptation
-
-RFM-2 is being deployed in warehouses and manufacturing facilities worldwide.",
-      "url": "https://covariant.ai/rfm-2",
-      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
     }
   ]
 }
